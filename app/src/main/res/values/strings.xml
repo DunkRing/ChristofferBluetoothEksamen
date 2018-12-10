@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BluetoothChris</string>
+    <string name="title_activity_message">messageActivity</string>
+</resources>

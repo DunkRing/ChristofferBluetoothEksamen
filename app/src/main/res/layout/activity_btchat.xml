@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".BTChat">
+
+    <!--Display status over actions-->
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="263dp"
+        android:layout_marginLeft="263dp"
+        android:layout_marginTop="24dp"
+        android:text="Status"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <!--Show Devices Btn-->
+    <Button
+        android:id="@+id/showDevices"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="107dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="7dp"
+        android:minWidth="200dp"
+        android:text="Show Devices" />
+
+    <!--listen to Devices Btn-->
+    <Button
+        android:id="@+id/listenToDevices"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="107dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="29dp"
+        android:minWidth="200dp"
+        android:text="Listen" />
+
+    <ListView
+        android:id="@+id/listOfDevices"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/showDevices"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listOfDevices"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="71dp"
+        android:text="Message"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/newText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="83dp"
+        android:hint="Enter Text Here" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="83dp"
+        android:layout_toRightOf="@+id/newText"
+        android:text="SEND" />
+
+</RelativeLayout>
