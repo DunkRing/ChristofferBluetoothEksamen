@@ -97,16 +97,16 @@ public class BTChat extends AppCompatActivity {
         mListenToDevices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Server server = new Server();
-                server.start();
+                Master master = new Master();
+                master.start();
             }
         });
 
         mListOfDevices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Client client = new Client(btArray[i]);
-                client.start();
+                Slave slave = new Slave(btArray[i]);
+                slave.start();
 
                 mStatus.setText("Connecting");
             }
@@ -153,13 +153,13 @@ public class BTChat extends AppCompatActivity {
         }
     });
 
-    private class Server extends Thread {
+    private class Master extends Thread {
 
         private BluetoothServerSocket serverSocket;
 
 
 
-        public Server ()
+        public Master ()
         {
             try{
                 serverSocket = bluetoothAdapter.listenUsingInsecureRfcommWithServiceRecord(APP_NAME,MY_UUID);
@@ -201,12 +201,12 @@ public class BTChat extends AppCompatActivity {
         }
     }
 
-    private class Client extends Thread {
+    private class Slave extends Thread {
 
         private BluetoothSocket socket;
         private BluetoothDevice device;
 
-        public Client(BluetoothDevice device1)
+        public Slave(BluetoothDevice device1)
         {
             this.device = device1;
             try{
